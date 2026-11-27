@@ -90,31 +90,31 @@ The user approved this plan and every decision in design.md's "Decisions that ne
     - `src/sim/profiles.test.ts`: every profile file passes the schema; there are exactly six, with the names from 3.3 to 3.8, and each has exactly one behaviour on, counting a turn of 10° or less as the small-range behaviour; the reach limits in 3.3 and 3.6 hold, checked as constants (6.2° and 5.2°) so the test imports only `src/sim/` files (test name starts with `SAF-1`); no name or description contains "ghost".
     - _Requirements: 6.1, 6.2, 6.7_
 
-- [ ] 4. Write the copy module and the wording tests
-  - [~] 4.1 Write `src/copy/index.ts`
+- [x] 4. Write the copy module and the wording tests
+  - [x] 4.1 Write `src/copy/index.ts`
     - Every string the requirements name, as named exports that take no Skin: the board labels; the sentences in 13.5; the confirm labels in 10.3; the Visitor_Hint and the Demo_Banner; the pause messages in 8.6 and 3.8, the head-held-rolled one included; the paused-for-care message as a function of the resume time text ("Paused for care. Selection is off. Resumes by itself at 03:22."); the word "Demo." spoken before demo sentences (13.12); the word "REST" (7.11); the Alert_Panel lines; the Unconfirmed_Notice wording and "Clear"; the nurse-drawer labels and notices; the Candlelight_Offer text and its buttons "Use Candlelight" and "Keep the plain look"; "Plain look", "Nurse menu" and the disclaimer; English weekday and month names for the Clock_Line; the Level 3 demo word list.
     - No string contains the word "Ward" (16.13). The nurse drawer says "Demo pointer", never "ghost". The copy-review hook runs when this file is saved; follow it.
     - _Requirements: 3.8, 4.1, 4.3, 4.4, 5.9, 6.6, 6.7, 7.11, 8.6, 8.7, 8.12, 10.3, 11.1, 11.2, 12.2, 13.5, 13.8, 13.12, 16.8, 16.11, 16.13, 17.1, 17.3, 17.11, 17.12, 17.14, 18.1, 18.4, 18.7, 19.3, 20.1, 20.2, 20.5, 20.6, 21.1_
-  - [~] 4.2 Write the tone and starting-wording tests
+  - [x] 4.2 Write the tone and starting-wording tests
     - `src/copy/copy.test.ts`: board labels are upper case; no string has an exclamation mark; no system message uses "I" as a word (patient sentences may); the strings equal the starting wording in 3.8, 7.11, 8.6, 10.3, 13.5, 13.12, 16.8, 16.11, 17.12 and 18.1, the care message with a sample time included. Test names start with `SKN-3`.
     - Also: no string contains the word "Ward" (16.13), and the plain-look labels are "Plain look" and "Keep the plain look". Those test names start with `SKN-2`.
     - _Requirements: 3.8, 7.11, 8.6, 10.3, 13.5, 13.12, 16.8, 16.11, 16.13, 17.12, 18.1, 20.2_
-  - [~] 4.3 Write the test for Property 20: SKN-4a
+  - [x] 4.3 Write the test for Property 20: SKN-4a
     - **Property 20: SKN-4a — no copy or profile text uses a forbidden topic or "ghost"**
     - In `src/copy/copy.skn-4.test.ts`: every Copy_Module string, and every profile name and description the drawer can show (from `src/sim/profiles.ts`), is free of the topics SKN-4 rules out and of the word "ghost". Spelled text is out of scope.
     - _Requirements: 20.3, 20.4_
     - Keep every counterexample fast-check finds as a named regression test beside the property (seed and shrunk input inline), and add a row to docs/evidence/counterexamples.md: seed, input, what broke, the fix.
-  - [~] 4.4 Write the test for Property 26: LNG-1a
+  - [x] 4.4 Write the test for Property 26: LNG-1a
     - **Property 26: LNG-1a — labels come from the fixed table and are never translated at runtime**
     - In `src/copy/copy.lng-1.test.ts`: over target ids and ignored skin or locale arguments, the label and sentence getters return the fixed English strings; a scan of `src/copy/`, read with `import.meta.glob(..., { query: '?raw' })`, finds no runtime translation.
     - _Requirements: 20.6, 16.3_
     - Keep every counterexample fast-check finds as a named regression test beside the property (seed and shrunk input inline), and add a row to docs/evidence/counterexamples.md: seed, input, what broke, the fix.
-  - [~] 4.5 Write the test for Property 28: NEV-3a
+  - [x] 4.5 Write the test for Property 28: NEV-3a
     - **Property 28: NEV-3a — no pause or notice wording names a clinical state**
     - In `src/copy/copy.nev-3.test.ts`: every pause message, the narrow-screen and head-held-rolled ones included, and every Unconfirmed_Notice wording is free of clinical-state words such as sleep, sedation, distress and delirium. "Head tilted to one side. Selection is off." names a position and must pass.
     - _Requirements: 8.6, 8.7, 17.14, 20.2_
     - Keep every counterexample fast-check finds as a named regression test beside the property (seed and shrunk input inline), and add a row to docs/evidence/counterexamples.md: seed, input, what broke, the fix.
-  - [~] 4.6 Write the test for Property 31: NEV-7a
+  - [x] 4.6 Write the test for Property 31: NEV-7a
     - **Property 31: NEV-7a — the board never describes itself with the forbidden terms**
     - In `src/copy/copy.nev-7.test.ts`: no string uses "diagnose", "monitor", "clinical-grade", "detects pain" or "medical device" outside the exact disclaimer "not a medical device", and none contains the trademarked talking-board game name. Build that name from parts, as `scripts/audit.mjs` does, so the word never appears in the repo.
     - _Requirements: 20.3_

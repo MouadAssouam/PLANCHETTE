@@ -36,7 +36,7 @@ The one-way chain is **tracking → pointer → selection → board → speech, 
 |---|---|---|
 | `src/tracking/pose.ts` | `HeadPose` type (yaw, pitch, roll in degrees). The camera device code arrives in spec 2; this slice needs only the type. | nothing |
 | `src/copy/index.ts` | Every string a patient, family or nurse sees or hears: labels, first-person sentences, confirm labels, system and pause messages, notice wording, the Level 3 demo word list. Named exports, no DOM. | nothing |
-| `src/copy/copy.test.ts` | The wording test (Requirement 20.3): scans every string and every Ghost_Profile name/description for forbidden topics, "ghost", the NEV-7 words and the trademarked name. | copy, sim profiles |
+| `src/copy/copy.test.ts` | The tone and starting-wording test (Requirement 20.2): labels are upper case, no string has an exclamation mark, no system message speaks as "I", each string with a starting wording matches it, and no string says "Ward" (16.13). The Requirement 20.3 scans, over every string and every Ghost_Profile name/description, live in `copy.skn-4.test.ts` (forbidden topics and "ghost") and `copy.nev-7.test.ts` (the NEV-7 words and the trademarked name). | copy |
 | `src/skins/tokens.ts` | Colour tokens per skin as pure data (hex values), plus the computed WCAG ratios used by the contrast test. | nothing |
 | `src/skins/skin.ts` | Pure Skin_Manager: given the session state (alert active, offer made, choice, address switch), returns which skin is shown. | nothing |
 | `src/skins/ward.css`, `candlelight.css` | Visuals only: colour, texture, the planchette pointer shape, the candle-flame charge ring, the slow light drift. No geometry. | — |
@@ -747,7 +747,7 @@ Not a fast-check property (it is the **absence** of behaviour). A source scan as
 
 ### Property 31: NEV-7a — the board never describes itself with the forbidden terms
 
-*For all* strings in the Copy_Module, none uses "diagnose", "monitor", "clinical-grade", "detects pain" or "medical device" (except inside the exact allowed disclaimer "not a medical device"), and none contains the trademarked talking-board game name.
+*For all* strings in the Copy_Module, none uses "diagnose", "monitor", "clinical-grade", "detects pain" or "medical device" (except inside the exact allowed disclaimer "not a medical device"), and none contains the trademarked talking-board game name. The scan also covers every Ghost_Profile name and description the Nurse_Drawer can show (Requirement 20.3).
 
 - **Generators:** iterate the copy table (a forall over the finite set).
 - **Assertion:** no string matches the NEV-7 term list outside the disclaimer, and none contains the trademarked name.
