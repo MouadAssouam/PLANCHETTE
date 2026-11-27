@@ -35,6 +35,12 @@ The category prize goes to the highest Stage Two score in the category. Ties are
 - All materials in English, or with English translations.
 - New work only, built during the submission period; disclose any pre-existing code. Third-party SDKs, APIs and data must be used within their licenses.
 
+## Our video rules
+- Open with the real problem (product.md), not with the theme.
+- No horror music, jump scares or spooky voice.
+- Show Candlelight as warm and calm.
+- Every word on screen and in the voiceover follows tone.md.
+
 ## Checks the pre-submit audit can't do
 - The video, voiceover, YouTube title and thumbnail, and the Devpost text contain no trademarked board-game name. Check them by hand.
 - Every feature the description or video shows works as shown; anything unbuilt is labelled as planned.

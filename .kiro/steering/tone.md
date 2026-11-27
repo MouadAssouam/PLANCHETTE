@@ -1,6 +1,6 @@
 ---
 inclusion: fileMatch
-fileMatchPattern: ["src/copy/**"]
+fileMatchPattern: ["src/copy/**", "README.md", "docs/**"]
 ---
 
 # Tone: the words patients, families and nurses read or hear
@@ -17,10 +17,10 @@ fileMatchPattern: ["src/copy/**"]
 - Every safety message stays plain in every skin.
 
 ## The two skins
-- Séance is spooky in its visuals only: dark wood, brass letters, candlelight. The words are exactly the same as in Ward.
-- Never joke about death, ghosts, spirits or the afterlife in anything the patient or family reads or hears. No "the spirits say", no "from beyond", no puns.
-- "Ghost" is a developer word for the scripted demo pointer. Patients and families never see it; the nurse drawer calls it "Demo pointer".
-- Call the product a "talking board" or "spirit board". Never use the trademarked board-game name.
+- Candlelight changes only the look: dark wood, brass letters, candle glow and a planchette for the pointer. The words are exactly the same as in Ward.
+- Call the product a "talking board" only. Never use the trademarked board-game name.
+- No words about spirits, séances, the dead, the beyond or the other side, and no jokes or puns about death or dying, in anything a patient, family member or nurse reads or hears, or in the README, the write-up, the Devpost description or the video. This covers the system's own words; a message the patient spells is never filtered or changed.
+- "Ghost" is a code word only, for the simulated patient that moves the demo pointer. Patients, families and nurses never see it: the nurse drawer says "Demo pointer", and public text (README, write-up, Devpost description, video) says "simulated patient".
 - Never call PLANCHETTE a medical device, a monitor or clinical-grade, or say it diagnoses or detects pain. The disclaimer reads: "PLANCHETTE is a prototype. It is not a medical device and does not replace the hospital's call system."
 
 ## The camera

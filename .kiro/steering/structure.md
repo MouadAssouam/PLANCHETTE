@@ -14,7 +14,7 @@ src/
   ask/          nurse Ask mode: the question, answer choices, NOT SURE / SOMETHING ELSE / NOT NOW.
   speech/       speechSynthesis wrapper. Speaks only what the patient selected.
   log/          bedside log: on the device, 24-hour expiry, print view.
-  skins/        Séance and Ward: CSS and visuals only, never geometry.
+  skins/        Candlelight and Ward: CSS and visuals only, never geometry.
   predict/      word and sentence completion: local first, optional AI suggestions.
   sim/          ghost patients: simulated head movement for demos and tests.
     profiles/   ghost-patient profiles as JSON (format in tech.md).
@@ -42,3 +42,9 @@ docs/           write-up material. kiro-log-raw.md is appended by the turn-log h
 - **Agents** are markdown files with YAML front matter in .kiro/agents/.
 - **Paths:** this folder can be opened through a Windows junction. Compare paths only after resolving both with `fs.realpathSync.native`.
 - **Names:** files in kebab-case, types in PascalCase, named exports only in src/.
+
+## Git
+- Work on the `testing` branch, and push only `testing`.
+- Merge into `master` only when the user asks. Judges see `master`, GitHub's default branch.
+- Never force-push, never run `git reset --hard`, and never delete files outside this folder.
+- Commit before switching branches. The turn-log hook changes docs/kiro-log-raw.md after every turn, and git can refuse to switch while that change is uncommitted.

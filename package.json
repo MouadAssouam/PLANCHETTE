@@ -16,9 +16,13 @@
     "check:task": "npm run typecheck && npm run test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.65.1",
     "fast-check": "^4.11.0",
     "typescript": "~7.0.2",
     "vite": "^8.4.0",
     "vitest": "^5.1.2"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^1.2.3"
   }
 }

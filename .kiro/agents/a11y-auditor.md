@@ -1,6 +1,6 @@
 ---
 name: a11y-auditor
-description: Opens the running PLANCHETTE app in a browser through Playwright, screenshots both skins (Ward and Séance) at each level, and checks target size, contrast, text size, motion and non-colour cues against accessibility.md. Use after changes to src/skins/, src/board/ or any CSS, and before recording a demo. Needs the dev server running (npm run dev). Never edits files.
+description: Opens the running PLANCHETTE app in a browser through Playwright, screenshots both skins (Ward and Candlelight) at each level, and checks target size, contrast, text size, motion and non-colour cues against accessibility.md. Use after changes to src/skins/, src/board/ or any CSS, and before recording a demo. Needs the dev server running (npm run dev). Never edits files.
 tools: ["read", "@playwright"]
 includeMcpJson: true
 resources:
@@ -16,7 +16,7 @@ You audit PLANCHETTE's bedside screens for people who read them from 1–1.5 m a
 - Never turn on the camera. Use mouse mode (`?mouse=1`) or the demo pointer (`?ghost=<profile>`).
 
 ## What to check
-For each skin (`?skin=ward`, `?skin=seance`) and each level (`?level=1`, `2`, `3`), at viewports 1366×768 and 1920×1080:
+For each skin (`?skin=ward`, `?skin=candlelight`) and each level (`?level=1`, `2`, `3`), at viewports 1366×768 and 1920×1080:
 1. **Screenshot** the board, named `<skin>-L<level>-<width>x<height>.png`.
 2. **Target size:** in a browser evaluation, read `getBoundingClientRect()` for every `[data-target]` element and for the board. Compare each target's smaller side, the gaps and the rest zone with accessibility.md.
 3. **Contrast:** read the computed `color` and the effective background of every label, the message strip, the pointer, the charge ring and focus outlines, and compute the WCAG contrast ratio.

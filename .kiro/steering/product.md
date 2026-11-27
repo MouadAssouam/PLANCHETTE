@@ -30,7 +30,7 @@ PLANCHETTE is a prototype. It is not a medical device, not a clinical assessment
 11. Bedside log on the device, printable for handover, cleared after 24 hours. Not a medical record.
 12. Pause for care: one click pauses selection during mouth care, suction or turning; it resumes by itself after 10 minutes (TUNE).
 13. Mouse mode and the demo pointer ("ghost" in code), for setup, demos, tests and judges without a camera. Never patient input: every screen says "Demo, not the patient", and demo entries are marked and left out of the printed handover.
-14. Two skins with identical geometry: Séance (dark wood, brass letters, candlelight) and Ward (high contrast, calm, no motion). Ward is the default.
+14. Two skins with identical geometry: Candlelight (dark wood, brass letters, warm candle glow, a planchette for the pointer) and Ward (high contrast, calm, no motion). Ward is the default.
 
 ## Build order
 All three levels and every core feature ship by 4 Dec. They are built in four slices, in this order, and each slice is deployed as soon as it is done:
@@ -41,8 +41,11 @@ All three levels and every core feature ship by 4 Dec. They are built in four sl
 
 The Nurse link gets its own spec: no database, no accounts, no names. The description and the video show only what is built; anything else is labelled as planned.
 
-## Why the spooky skin earns its place (Costume Contest)
-A talking board already works like a head pointer: the planchette glides to a letter and rests there. Séance makes that visible. The pointer is the planchette, the dwell ring is a candle flame filling, the letters are brass. The nurse offers Séance once the patient is alert and oriented, and the patient or family chooses it. Words, speech and safety messages stay plain in every skin.
+## Why Candlelight earns its place (Costume Contest)
+The talking board is a Victorian object that turns small movements into words. PLANCHETTE uses it to give a voice to people who can't speak yet.
+Candlelight makes that visible: the head pointer is the planchette, the dwell ring is a candle flame filling, and the letters are brass on dark wood.
+It is warm and calm. The nurse offers it, the patient or family chooses it, and Ward is one click away (SKN-2).
+Words, speech and safety messages stay plain in every skin.
 
 ## Prior art and what is different
 Webcam head pointers exist: Camera Mouse (Boston College, a Windows program) and Google's open-source Project Gameface, which uses MediaPipe and clicks with facial gestures such as opening the mouth. Both replace a mouse for general computer use. PLANCHETTE is built for the ICU bed: dwell only, no mouth gestures (a breathing tube rules them out), an ICU vocabulary, safety rules for dozing heads and urgent calls, nurse Ask mode, and nothing to install.
@@ -54,7 +57,7 @@ Eye tracking, blink selection, mouth or lip input, accounts and logins, database
 Measured with healthy volunteers set up like a patient (clinical-context.md section 7):
 - Setup: under 30 s from opening the page to the first selection, calibration included, by a first-time user wearing gloves (stopwatch, median of 5 setups).
 - Saying "PAIN 7, CHEST": 3 selections, under 60 s at Level 2 (stopwatch, median of 5 tries).
-- Accidental output while resting: no urgent alert and nothing spoken in 60 minutes of rest, waking from a doze included (volunteer sessions plus hour-long ghost runs).
+- Accidental output while resting: no urgent alert and nothing spoken in 60 minutes of rest, waking from a doze included (volunteer sessions plus hour-long simulated-patient runs).
 
 ## Deadline
 Submissions close 4 Dec 2026 at 2:00 pm Pacific. The demo must stay online and free to test until judging ends on 29 Jan 2027 (judge-criteria.md).

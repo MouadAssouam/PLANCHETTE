@@ -84,10 +84,10 @@ Each rule must be testable. Prefer property-based tests or ghost-patient simulat
 13. The day and time are visible on every screen.
 
 ### Skins and tone
-14. The **wake-up orientation card is always plain (Ward style)**. A confused patient waking up must never see spooky imagery first.
-15. Offer the Séance skin once the patient is alert and oriented, and let the patient or family choose. Some patients will enjoy it; others will find it frightening.
-16. Spooky style lives only in visuals. Spoken output, the message strip, the orientation card and every safety message are always plain, calm and literal.
-17. Never joke about death, ghosts or spirits in any text the patient or family reads or hears.
+14. The **wake-up orientation card is always plain (Ward style)**. A confused patient waking up must never see Candlelight first.
+15. The nurse offers the Candlelight skin only when the patient is awake, oriented and recovering, and the patient or family chooses it. The nurse or family can switch back to Ward in one click at any time. Candlelight never shows on first wake, on the orientation card, on an alert screen or in night mode. Some patients will enjoy it; others will find it frightening.
+16. Candlelight's style lives only in visuals. Spoken output, the message strip, the orientation card and every safety message are always plain, calm and literal.
+17. Never use words about ghosts, spirits, séances, the dead, the beyond or the other side, and never joke about death or dying, in any text a patient, family member or nurse reads or hears. A message the patient spells is never filtered or changed.
 
 ### Pain
 18. Pain is self-report only: a 0–10 number the patient chose. Never infer pain from facial expression, and never fill a pain score in for the patient.
@@ -118,7 +118,7 @@ Each rule must be testable. Prefer property-based tests or ghost-patient simulat
 - Send the patient's name, the orientation card or the bedside log to the AI service.
 - Require an account, a login or an internet connection for the core board.
 - Use words like "diagnose", "monitor", "clinical-grade", "detects pain" or "medical device" about itself.
-- Use the name of a trademarked talking-board game. Say "talking board" or "spirit board".
+- Use the name of a trademarked talking-board game. Say "talking board".
 
 ---
 

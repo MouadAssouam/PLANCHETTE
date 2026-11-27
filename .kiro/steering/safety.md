@@ -32,9 +32,9 @@ Every requirement needs at least one test that names its ID, preferably a fast-c
 
 ## Skins and tone
 - SKN-1 WHEN the orientation card is shown, the system SHALL show it in Ward style.
-- SKN-2 The system SHALL start in Ward, and SHALL switch to Séance only after the nurse offers it and the patient or family chooses it.
+- SKN-2 The system SHALL start in Ward, and SHALL switch to Candlelight only when the nurse offers it in the nurse drawer and the patient or family chooses it. The nurse judges whether the patient is awake, oriented and recovering; the system SHALL NOT assess it (NEV-3). The system SHALL let the nurse or family switch back to Ward in one click at any time, SHALL NOT show Candlelight on the orientation card, on an alert screen or in night mode, and after a wake from night mode SHALL stay in Ward until the nurse offers Candlelight again.
 - SKN-3 The system SHALL keep spoken output, the message strip, the orientation card and every safety message plain and literal in every skin.
-- SKN-4 The system SHALL NOT include jokes about death, ghosts or spirits in any text the patient or family reads or hears.
+- SKN-4 The system SHALL NOT use words about ghosts, spirits, séances, the dead, the beyond or the other side, or joke about death or dying, in its own text that a patient, family member or nurse reads or hears, and SHALL NOT filter or change words the patient spells (NEV-2).
 - SKN-5 The system SHALL show the orientation card at start and on every wake from night mode, and SHALL switch back to Ward when night mode starts.
 
 ## Pain

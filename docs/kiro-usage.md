@@ -22,9 +22,9 @@ Kiro IDE on Windows, in one long agent chat session. We haven't used Kiro CLI, W
 | product.md | always | Problem, users, core features, scope, prior art, success measures |
 | structure.md | always | Module layout, pure logic kept apart from the DOM, one-way data flow, where text lives |
 | safety.md | always | The clinical rules rewritten as EARS requirements with IDs (SAF, LAY, ATT, SKN, PAIN, NGT, ALR, LNG, NEV, AI, CAM) |
-| tech.md | fileMatch: `src/**/*.ts`, `**/*.test.ts`, `src/sim/**` | Stack and why, performance budgets, privacy, camera handling, testing plan, ghost-patient profile format |
+| tech.md | fileMatch: `src/**/*.ts`, `**/*.test.ts`, `src/sim/**` | Stack and why, performance budgets, privacy, camera handling, testing plan, simulated-patient profile format |
 | accessibility.md | fileMatch: `src/skins/**`, `src/board/**`, `src/ask/**`, `**/*.css` | Target size, contrast, motion, text size, cues that don't rely on colour or sound |
-| tone.md | fileMatch: `src/copy/**` | Wording rules, the camera explanation, the preview rule |
+| tone.md | fileMatch: `src/copy/**`, `README.md`, `docs/**` | Wording rules, the camera explanation, the preview rule |
 | judge-criteria.md | manual | Judging criteria and submission requirements from the official rules |
 
 What made a difference:
@@ -86,7 +86,7 @@ How they were used:
 
 ## Property-based testing
 - Vitest 5 and fast-check 4 are set up. One example property proves the tooling works: `clamp` always returns a value inside the range and leaves in-range values unchanged.
-- The plan in tech.md is that every safety.md ID gets a test that names it, preferably a fast-check property or a ghost-patient simulation. None of those tests exist yet.
+- The plan in tech.md is that every safety.md ID gets a test that names it, preferably a fast-check property or a simulated-patient run. None of those tests exist yet.
 
 ## Specs
 None yet. Spec 1 will be first-slice, the board without a camera (slice 1 of the build order in product.md). Spec 2 will be head tracking and calibration. The task-gate and task-report hooks are ready.

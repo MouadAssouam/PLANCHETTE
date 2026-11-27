@@ -21,7 +21,7 @@ The patient reads the board from 1–1.5 m away, lying back at 30–45°, often 
 
 ## No flashing, calm motion
 - Nothing flashes, blinks or strobes, in either skin. No countdowns.
-- Séance candlelight is a slow brightness drift only: ≤ 10% luminance change with a period of at least 3 s (TUNE). It stops under `prefers-reduced-motion` and in night mode.
+- In Candlelight, the candle glow is a slow brightness drift only: ≤ 10% luminance change with a period of at least 3 s (TUNE). It stops under `prefers-reduced-motion`. Night mode always switches to Ward (SKN-5).
 - Ward has no decorative motion. Only the pointer and the charge ring move.
 - Screen changes fade over at least 300 ms (TUNE); nothing appears suddenly.
 
@@ -29,7 +29,7 @@ The patient reads the board from 1–1.5 m away, lying back at 30–45°, often 
 - Board labels: cap height ≥ 1.5 cm on the bedside screen viewed from 1 m (about 6vmin on a 13–15" laptop; TUNE with volunteers who leave their glasses off).
 - Message strip ≥ 5vmin; day and time ≥ 4vmin; nurse drawer ≥ 16 px.
 - The Ask-mode question and the orientation card text: at least board-label size. The reason on pause and alert screens: ≥ 8vmin, readable from the doorway (TUNE).
-- Labels use a heavy, plain sans-serif (weight ≥ 600). No thin or decorative fonts for words in either skin; Séance decoration lives in borders, textures and light.
+- Labels use a heavy, plain sans-serif (weight ≥ 600). No thin or decorative fonts for words in either skin; Candlelight's decoration lives in borders, textures and light.
 
 ## Colour is never the only cue
 - Every state has a second cue: shape, text or position. The charge ring fills as an arc; a selected target gets a thick outline and a text change; urgent targets have their own position and label, not just red.
