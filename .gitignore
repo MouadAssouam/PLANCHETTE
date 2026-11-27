@@ -1,1 +1,5 @@
 rules.txt
+node_modules/
+dist/
+# Recorded head-movement clips for end-to-end tests. Never commit face video.
+e2e/clips/

@@ -1,0 +1,11 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "turn-log",
+      "description": "After each agent turn, appends the local time and git diff --shortstat to docs/kiro-log-raw.md.",
+      "trigger": "Stop",
+      "action": { "type": "command", "command": "node scripts/log-turn.mjs" }
+    }
+  ]
+}

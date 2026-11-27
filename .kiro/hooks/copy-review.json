@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "copy-review",
+      "description": "After a file in src/copy/ is saved, asks the agent to review the changed text against tone.md and the wording rules in clinical-context.md.",
+      "trigger": "PostFileSave",
+      "matcher": "src[\\\\/]copy[\\\\/]",
+      "action": {
+        "type": "agent",
+        "prompt": "Review the text you just changed in src/copy against tone.md and the wording rules in clinical-context.md. Fix anything that breaks them."
+      }
+    }
+  ]
+}

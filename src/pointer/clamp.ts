@@ -1,0 +1,4 @@
+/** Limits `value` to the range [min, max]. Expects min <= max. */
+export function clamp(value: number, min: number, max: number): number {
+  return Math.min(max, Math.max(min, value));
+}

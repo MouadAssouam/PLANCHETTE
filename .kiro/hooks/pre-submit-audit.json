@@ -1,0 +1,11 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "pre-submit-audit",
+      "description": "When a prompt says \"pre-submit audit\", prints a PASS/FAIL checklist of submission checks. scripts/audit.mjs reads the prompt from the stdin JSON and falls back to USER_PROMPT.",
+      "trigger": "UserPromptSubmit",
+      "action": { "type": "command", "command": "node scripts/audit.mjs" }
+    }
+  ]
+}

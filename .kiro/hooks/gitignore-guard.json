@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "gitignore-guard",
+      "description": "After .gitignore is saved, asks the agent to check that .kiro is not ignored and to undo the line if it is.",
+      "trigger": "PostFileSave",
+      "matcher": "\\.gitignore$",
+      "action": {
+        "type": "agent",
+        "prompt": "You just changed .gitignore. Run: git check-ignore -v .kiro/steering/clinical-context.md .kiro/settings/mcp.json. If it prints anything, undo the line that ignores .kiro, because the .kiro folder must stay in the repo."
+      }
+    }
+  ]
+}
