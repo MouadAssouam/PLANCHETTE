@@ -1,0 +1,12 @@
+{
+  "name": "small-range",
+  "description": "Small range of head movement: about 8° of turn to each side, 6° up and 5° down.",
+  "notes": "Turn 8° to the left and 8° to the right, up 6° and down 5°: all given. A turn of 10° or less is the small-range behaviour, the only behaviour on in this profile. Reach: at 1280×800 under the Default_Range (10° turn, 8° pitch), CALL and CAN'T BREATHE need 6.13° of turn and 5.12° up, and their confirms need 5.12° up with less turn (design.md, \"Reachability of the urgent targets\"). The plan's floor is 6.2° of turn each way and 5.2° up (TUNE). The given 8° and 6° meet it with 1.8° and 0.8° to spare, so both urgent targets and both confirms stay reachable. Down 5° has no floor, because no urgent target or confirm sits below the rest zone (SAF-7). Tremor 0° at 0 Hz: given, no tremor. Drift 0° per minute: given, no drift, so not the 0.5° default. Fatigue 0% per minute: given, no fatigue. Dozing null: given, no dozing. faceLost null: given, the face stays in view. Seed 3301: given for task 3.3. Every value comes from the description or the plan; all stay TUNE until there are volunteer recordings (tech.md).",
+  "seed": 3301,
+  "rangeDeg": { "left": 8, "right": 8, "up": 6, "down": 5 },
+  "tremor": { "amplitudeDeg": 0, "frequencyHz": 0 },
+  "driftDegPerMin": 0,
+  "fatigue": { "rangeLossPctPerMin": 0 },
+  "dozing": null,
+  "faceLost": null
+}

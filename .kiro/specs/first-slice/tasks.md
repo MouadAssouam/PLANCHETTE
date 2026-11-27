@@ -56,36 +56,36 @@ The user approved this plan and every decision in design.md's "Decisions that ne
     - Compile the matcher with `new RegExp(matcher)`. It must match `src/selection/engine.ts` and `src\board\layout.ts`, and must not match `src/copy/index.ts`.
     - _Requirements: 23.11_
 
-- [ ] 3. Write the shared types and the six simulated-patient profiles
-  - [~] 3.1 Write the shared types
+- [x] 3. Write the shared types and the six simulated-patient profiles
+  - [x] 3.1 Write the shared types
     - `src/tracking/pose.ts` (`HeadPose`), `src/pointer/sample.ts` (`BoardPosition`, `PointerSource`, `PointerSample`) and `src/selection/types.ts` (`Rect`, `Level`, `ActiveTarget`, `PauseReason` with `'screen-too-narrow'` and `'head-held-rolled'`, `UrgentId`, `EngineConfig` with `heldRollDeg` and `heldRollMs`, `Alert`, `Unconfirmed`, `EngineState` with `rollHeldSinceMs`, `EngineEvent`), as in the design's Data Models. Named exports only.
     - _Requirements: 3.8, 5.1, 7.7, 8.1, 8.12_
-  - [~] 3.2 Write the profile type and its schema check
+  - [x] 3.2 Write the profile type and its schema check
     - `src/sim/pose-types.ts`: the `GhostProfile` type in tech.md's "Ghost profile format", and `validateGhostProfile(value)`, which returns the profile or a list of problems. Write the check by hand, with no schema package.
     - _Requirements: 6.1_
-  - [~] 3.3 Write the small-range profile (run by the orchestrator with the ghost-patient-designer agent)
+  - [x] 3.3 Write the small-range profile (run by the orchestrator with the ghost-patient-designer agent)
     - File `src/sim/profiles/small-range.json`. Description for the agent: "Small range of head movement: about 8° of turn to each side, 6° up and 5° down. No tremor, no drift, no fatigue, no dozing, and the face stays in view."
     - Also tell the agent to keep at least 6.2° of turn each way and 5.2° up (TUNE), so CALL and CAN'T BREATHE stay reachable (design, "Reachability of the urgent targets").
     - _Requirements: 6.1, 6.2_
-  - [~] 3.4 Write the tremor profile (run by the orchestrator with the ghost-patient-designer agent)
+  - [x] 3.4 Write the tremor profile (run by the orchestrator with the ghost-patient-designer agent)
     - File `src/sim/profiles/tremor.json`. Description for the agent: "Normal range of head movement with a steady tremor of 2° at 6 Hz. No drift, no fatigue, no dozing, and the face stays in view."
     - _Requirements: 6.1, 6.2_
-  - [~] 3.5 Write the slow-drift profile (run by the orchestrator with the ghost-patient-designer agent)
+  - [x] 3.5 Write the slow-drift profile (run by the orchestrator with the ghost-patient-designer agent)
     - File `src/sim/profiles/slow-drift.json`. Description for the agent: "Normal range of head movement. The resting head drifts slowly, 2° per minute. No tremor, no fatigue, no dozing, and the face stays in view."
     - _Requirements: 6.1, 6.2_
-  - [~] 3.6 Write the fatigue profile (run by the orchestrator with the ghost-patient-designer agent)
+  - [x] 3.6 Write the fatigue profile (run by the orchestrator with the ghost-patient-designer agent)
     - File `src/sim/profiles/fatigue.json`. Description for the agent: "Normal range of head movement at first, shrinking as the patient tires: 1.5% of the range is lost each minute. No tremor, no drift, no dozing, and the face stays in view."
     - Also tell the agent that after 30 minutes the range must still cover at least 6.2° of turn each way and 5.2° up (TUNE). This is the profile the Fatigue_Reach_Run uses.
     - _Requirements: 6.1, 6.2, 23.3_
-  - [~] 3.7 Write the dozing-roll profile (run by the orchestrator with the ghost-patient-designer agent)
+  - [x] 3.7 Write the dozing-roll profile (run by the orchestrator with the ghost-patient-designer agent)
     - File `src/sim/profiles/dozing-roll.json`. Description for the agent: "Normal range of head movement. Every 8 minutes the patient nods off for 60 seconds: the head rolls 15° to one side, then comes back. No tremor, no drift, no fatigue, and the face stays in view."
     - Also tell the agent to name the side (left or right) in `notes`, and that every 10-minute run must contain at least one doze.
     - _Requirements: 6.1, 6.2_
-  - [~] 3.8 Write the face-leaves-frame profile (run by the orchestrator with the ghost-patient-designer agent)
+  - [x] 3.8 Write the face-leaves-frame profile (run by the orchestrator with the ghost-patient-designer agent)
     - File `src/sim/profiles/face-leaves-frame.json`. Description for the agent: "Normal range of head movement. Every 5 minutes the face leaves the camera's view for 10 seconds, for example during care. No tremor, no drift, no fatigue, no dozing."
     - Also tell the agent that every 10-minute run must contain at least one face loss.
     - _Requirements: 6.1, 6.2_
-  - [~] 3.9 Write the profile loader and the schema test
+  - [x] 3.9 Write the profile loader and the schema test
     - `src/sim/profiles.ts` loads every `src/sim/profiles/*.json` with Vite's `import.meta.glob` and validates each with `validateGhostProfile`. Code that the sweep runs in plain Node (task 12) never imports it.
     - `src/sim/profiles.test.ts`: every profile file passes the schema; there are exactly six, with the names from 3.3 to 3.8, and each has exactly one behaviour on, counting a turn of 10° or less as the small-range behaviour; the reach limits in 3.3 and 3.6 hold, checked as constants (6.2° and 5.2°) so the test imports only `src/sim/` files (test name starts with `SAF-1`); no name or description contains "ghost".
     - _Requirements: 6.1, 6.2, 6.7_

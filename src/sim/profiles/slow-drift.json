@@ -1,0 +1,12 @@
+{
+  "name": "slow-drift",
+  "description": "Normal range of head movement with a slow drift of 2° per minute at rest.",
+  "notes": "Turn 25° left and right, up and down 12°: the awake default for 'normal range' (TUNE). The turn stays above 10°, so this profile does not count as small range. Drift 2° per minute (given), the most the slow-drift behaviour allows (2° per minute or less); the format holds the rate only, not the direction. Tremor 0 at 0 Hz (given: no tremor). Fatigue 0 (given: no fatigue). Dozing null (given: no dozing). Face loss null (given: the face stays in view). Seed 3503 set by the plan (task 3.5).",
+  "seed": 3503,
+  "rangeDeg": { "left": 25, "right": 25, "up": 12, "down": 12 },
+  "tremor": { "amplitudeDeg": 0, "frequencyHz": 0 },
+  "driftDegPerMin": 2,
+  "fatigue": { "rangeLossPctPerMin": 0 },
+  "dozing": null,
+  "faceLost": null
+}

@@ -1,0 +1,12 @@
+{
+  "name": "fatigue",
+  "description": "Head movement starts out normal, and its range shrinks by 1.5% each minute as the patient tires.",
+  "notes": "Only fatigue is on. Turn 25° left and right and 12° up and down are the awake default for 'normal range' (TUNE); the turn stays above 10°, so the profile does not count as small range. Fatigue 1.5% of the starting range per minute is given ('1.5% of the range is lost each minute'), applied linearly: range = start × (1 - 1.5 × minutes / 100). At 30 min the factor is 0.55: turn 25° × 0.55 = 13.75° each way (at least 6.2° needed, TUNE), up 12° × 0.55 = 6.6° (at least 5.2° needed, TUNE), down 12° × 0.55 = 6.6°. Up is the first limit to fail, at about 37.8 min, so the Fatigue_Reach_Run has about 7.8 min of margin after minute 30; turn falls below 6.2° at about 50.1 min. The range reaches 0 at about 66.7 min; at 60 min it is 2.5° of turn and 1.2° up and down. Tremor 0 and drift 0: 'no tremor, no drift' (given; drift 0 replaces the 0.5° per minute default). Dozing null: 'no dozing' (given). Face loss null: 'the face stays in view' (given). Seed 3604 (given).",
+  "seed": 3604,
+  "rangeDeg": { "left": 25, "right": 25, "up": 12, "down": 12 },
+  "tremor": { "amplitudeDeg": 0, "frequencyHz": 0 },
+  "driftDegPerMin": 0,
+  "fatigue": { "rangeLossPctPerMin": 1.5 },
+  "dozing": null,
+  "faceLost": null
+}

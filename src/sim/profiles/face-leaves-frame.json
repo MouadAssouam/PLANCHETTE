@@ -1,0 +1,12 @@
+{
+  "name": "face-leaves-frame",
+  "description": "Normal range of head movement, and the face leaves the camera's view for 10 seconds every 5 minutes.",
+  "notes": "Only face loss is on. Turn 25° left and right and 12° up and down are the awake default for 'normal range' (TUNE); the turn stays above 10°, so the profile does not count as small range. Face loss every 5 min for 10 s: given ('every 5 minutes the face leaves the camera's view for 10 seconds, for example during care'). Timing, an assumption the simulator must keep: the first loss starts at minute 5, not at minute 0, and the losses repeat exactly every 5 minutes, with no jitter and no seed-based offset, so they run 5:00–5:10, 10:00–10:10, 15:00–15:10 and so on. A 10-minute run (the Active_Use_Run, 0:00 to 10:00) then holds one full loss, 5:00 to 5:10, and the next one starts at 10:00 as the run ends. A 60-minute Rest_Run holds 11 full losses, the first at 5:00 and the last at 55:00. Because 5 min plus 10 s is under 10 min, every 10-minute window from time 0 on holds at least one full loss under this timing. Each 10 s loss outlasts the 500 ms (TUNE) gap after which the engine reads Face_Out_Of_View, so each loss pauses selection for about 9.5 s (SAF-5). Tremor 0 at 0 Hz: 'no tremor' (given). Drift 0: 'no drift' (given), so not the 0.5° per minute default. Fatigue 0: 'no fatigue' (given). Dozing null: 'no dozing' (given). Seed 3806, given for task 3.8. All values stay TUNE until there are volunteer recordings (tech.md).",
+  "seed": 3806,
+  "rangeDeg": { "left": 25, "right": 25, "up": 12, "down": 12 },
+  "tremor": { "amplitudeDeg": 0, "frequencyHz": 0 },
+  "driftDegPerMin": 0,
+  "fatigue": { "rangeLossPctPerMin": 0 },
+  "dozing": null,
+  "faceLost": { "everyMin": 5, "durationS": 10 }
+}
