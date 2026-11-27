@@ -44,13 +44,13 @@ The user approved this plan and every decision in design.md's "Decisions that ne
     - No camera flags, because the camera never starts in this slice. Don't run `npm run e2e` yet: there are no specs until task 16.
     - _Requirements: 24.3_
 
-- [ ] 2. Add the safety-tests hook
-  - [~] 2.1 Create `.kiro/hooks/safety-tests.json`
+- [x] 2. Add the safety-tests hook
+  - [x] 2.1 Create `.kiro/hooks/safety-tests.json`
     - Creating a file in `.kiro/hooks/` asks the user for approval. Wait for it.
     - Content: `"version": "v1"` and one hook with `"name": "safety-tests"`, `"description": "After a .ts file in src/selection, src/board, src/pointer or src/sim is saved, runs the safety subset of the tests with npm run test:safety."`, `"trigger": "PostFileSave"`, `"matcher": "src[\\\\/](selection|board|pointer|sim)[\\\\/].*\\.ts$"`, `"action": { "type": "command", "command": "npm run test:safety" }` and `"timeout": 120`.
     - As a plain regex the matcher is `src[\\/](selection|board|pointer|sim)[\\/].*\.ts$`. In JSON every backslash is doubled, as in `copy-review.json`.
     - _Requirements: 23.11_
-  - [~] 2.2 Check the hook file with a test
+  - [x] 2.2 Check the hook file with a test
     - Write `src/safety-hook.test.ts`. Read the hook file and `package.json` as text with Vite `?raw` imports, because `src/` has no Node types.
     - Assert that the JSON parses, `version` is "v1", the hook has a `name` and a `description`, the trigger is PostFileSave, the command is `npm run test:safety`, and the `test:safety` script in `package.json` is `vitest run src/selection src/board src/pointer src/sim`.
     - Compile the matcher with `new RegExp(matcher)`. It must match `src/selection/engine.ts` and `src\board\layout.ts`, and must not match `src/copy/index.ts`.

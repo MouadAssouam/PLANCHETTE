@@ -1,0 +1,13 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "safety-tests",
+      "description": "After a .ts file in src/selection, src/board, src/pointer or src/sim is saved, runs the safety subset of the tests with npm run test:safety.",
+      "trigger": "PostFileSave",
+      "matcher": "src[\\\\/](selection|board|pointer|sim)[\\\\/].*\\.ts$",
+      "action": { "type": "command", "command": "npm run test:safety" },
+      "timeout": 120
+    }
+  ]
+}
