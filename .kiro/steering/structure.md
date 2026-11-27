@@ -14,6 +14,7 @@ src/
   ask/          nurse Ask mode: the question, answer choices, NOT SURE / SOMETHING ELSE / NOT NOW.
   speech/       speechSynthesis wrapper. Speaks only what the patient selected.
   log/          bedside log: on the device, 24-hour expiry, print view.
+  alert/        chime pattern and Web Audio player for urgent alerts. After selection, beside speech and log.
   skins/        Candlelight and Ward: CSS and visuals only, never geometry.
   predict/      word and sentence completion: local first, optional AI suggestions.
   sim/          ghost patients: simulated head movement for demos and tests.
@@ -24,7 +25,7 @@ src/
 api/            serverless function /api/suggest (Vercel: api/suggest.ts serves /api/suggest).
 public/models/  self-hosted MediaPipe model and WASM files.
 e2e/            end-to-end tests with Chromium's fake camera. e2e/clips/ is git-ignored.
-scripts/        hook scripts: plain Node .mjs files, no dependencies.
+scripts/        hook scripts and experiment scripts: plain Node .mjs files, no dependencies.
 docs/           write-up material. kiro-log-raw.md is appended by the turn-log hook.
 .kiro/          steering/ (markdown), hooks/ (JSON), agents/ (markdown), specs/.
 ```
@@ -32,7 +33,7 @@ docs/           write-up material. kiro-log-raw.md is appended by the turn-log h
 ## Rules
 - **Pure logic is separate from the DOM.** Only files named `*.dom.ts` may touch `document`, `window`, `navigator`, timers, media, storage or speech APIs. Everything else in src/ is plain TypeScript that runs in Node, so fast-check properties and ghost simulations can drive it.
 - **Time is an input.** Pure code takes `now` in milliseconds as a parameter and never reads the clock itself.
-- **Data flows one way:** tracking → pointer → selection → board → speech and log. A module never imports from a module later in that chain.
+- **Data flows one way:** tracking → pointer → selection → board → speech, log and alert. A module never imports from a module later in that chain.
 - **Positions live in one place.** src/board/ owns the layout table; skins, levels and the printed board read from it and never move a target.
 - **User-facing text lives in src/copy/.** No string a patient, family member or nurse will see or hear is written anywhere else.
 - **Targets are findable.** Every board target renders with `data-target="<id>"`, so tests and the a11y-auditor agent can measure it.

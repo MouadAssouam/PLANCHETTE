@@ -42,7 +42,7 @@ fileMatchPattern: ["src/copy/**", "README.md", "docs/**"]
 
 ## Other starting wording
 - Demo banner (mouse mode and the demo pointer): "Demo, not the patient."
-- Paused for care: "Paused for care. Selection is off."
+- Paused for care: "Paused for care. Selection is off. Resumes by itself at 03:22." The time is the clock time of the automatic resume, never a countdown.
 - Test sound: "If you did not hear a chime, turn the volume up."
 - Wake lock refused: "This screen may turn off by itself. Change the power settings so it stays on."
 
