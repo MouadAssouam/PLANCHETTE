@@ -12,6 +12,9 @@
     "dev": "vite",
     "build": "npm run typecheck && vite build",
     "test": "vitest run",
+    "test:safety": "vitest run src/selection src/board src/pointer src/sim",
+    "sweep": "node scripts/dwell-sweep.mjs",
+    "e2e": "playwright test",
     "typecheck": "tsc --noEmit",
     "check:task": "npm run typecheck && npm run test"
   },
