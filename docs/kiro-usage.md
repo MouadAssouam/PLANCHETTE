@@ -95,10 +95,11 @@ None yet. Spec 1 will be first-slice, the board without a camera (slice 1 of the
 Not used.
 
 ## Working inside Kiro's sandbox and permissions
-- **What the sandbox blocked.** Shell commands run in Kiro's local command sandbox. Here that meant no network (the npm registry was unreachable) and no access to some folders (`.kiro/settings/` and the OneDrive folder above the workspace junction). Child processes with piped output also hung.
+- **What the sandbox blocked.** At first, shell commands ran in Kiro's local command sandbox. Here that meant no network (the npm registry was unreachable) and no access to some folders (`.kiro/settings/` and the OneDrive folder above the workspace junction). Child processes with piped output also hung.
 - **What we changed.**
   - The hook scripts send git and npm output to a temp file instead of a pipe.
   - Vitest runs in worker threads.
   - Shell runs through the junction path use node's `--preserve-symlinks` flags.
-- **Installing dependencies.** `npm install --ignore-scripts --no-audit --no-fund` ran once through a temporary hook with that fixed command, and the hook was deleted right after. In our tests hook commands ran outside the sandbox: that hook reached the npm registry. From now on we run installs by hand, and there are no install hooks.
+- **Without the sandbox.** The shell now has network access: it reaches GitHub, the npm registry and Playwright's download server.
+- **Installing dependencies.** `npm install --ignore-scripts --no-audit --no-fund` ran once through a temporary hook with that fixed command, and the hook was deleted right after. In our tests hook commands ran outside the sandbox: that hook reached the npm registry. Now the agent runs installs itself when we ask, as it did for `@mediapipe/tasks-vision`, `@playwright/test` and Playwright's Chromium. There are still no install hooks.
 - **Permissions.** The agent can't write `.kiro/settings/` at all. Kiro's docs say writes to `.kiro/hooks/` and `.kiro/agents/` always ask for approval.
